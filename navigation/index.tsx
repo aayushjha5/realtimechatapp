@@ -3,12 +3,12 @@
  * https://reactnavigation.org/docs/getting-started
  *
  */
-import { Fontisto, FontAwesome } from '@expo/vector-icons';
+import { Fontisto, FontAwesome, FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
-import {  Button, ColorSchemeName, Pressable, View } from 'react-native';
+import {  ColorSchemeName, View } from 'react-native';
 import {Octicons, MaterialCommunityIcons} from '@expo/vector-icons';
 
 import Colors from '../constants/Colors';
@@ -16,6 +16,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
 import ChatsScreen from '../screens/ChatsScreen';
+import ChatRoomScreen from '../screens/ChatRoomScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
@@ -63,7 +64,28 @@ function RootNavigator() {
           </View>
         )        
       }}/>
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+            <Stack.Screen
+             name="ChatRoom"
+              component={ChatRoomScreen} 
+              options={({ route })  => ({
+                title: route.params.name,
+                headerRight: () => (
+                  <View style={{
+                    flexDirection: 'row',
+                    width: 100,
+                    justifyContent: 'space-between',
+                    marginRight: 10,
+                  }}>
+                    <FontAwesome5 name="video" size={22} color={'white'} />
+                    <MaterialIcons name="call" size={22} color={'white'} />
+                    <MaterialCommunityIcons name="dots-vertical" size={22} color={'white'} />
+                  </View>
+                )
+              })} />
+      <Stack.Screen 
+      name="NotFound" 
+      component={NotFoundScreen} 
+      options={{ title: 'Chat Room!' }} />
       {/* <Stack.Group screenOptions={{ presentation: 'modal' }}>
         <Stack.Screen name="Modal" component={ModalScreen} />
       </Stack.Group> */}
@@ -125,9 +147,9 @@ function MainTabNavigator() {
 /**
  * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
  */
-function TabBarIcon(props: {
-  name: React.ComponentProps<typeof FontAwesome>['name'];
-  color: string;
-}) {
-  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
-}
+// function TabBarIcon(props: {
+//   name: React.ComponentProps<typeof FontAwesome>['name'];
+//   color: string;
+// }) {
+//   return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
+// }

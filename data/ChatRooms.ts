@@ -11,7 +11,7 @@ export default [{
   }],
   lastMessage: {
     id: 'm1',
-    content: 'Well done this sprint, guys!',
+    content: 'Please recharge my phone',
     createdAt: '2022-05-05T11:48:00.000Z',
   }
 }, {
@@ -27,7 +27,7 @@ export default [{
   }],
   lastMessage: {
     id: 'm2',
-    content: 'How are you doing?',
+    content: 'CV do jaldi bna ke',
     createdAt: '2022-05-02T15:40:00.000Z',
   }
 }, {
@@ -59,7 +59,7 @@ export default [{
   }],
   lastMessage: {
     id: 'm4',
-    content: 'Can you review my last merge',
+    content: 'Gomutra is so pious, they..',
     createdAt: '2022-04-29T14:48:00.000Z',
   }
 }, {
