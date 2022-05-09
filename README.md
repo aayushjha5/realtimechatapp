@@ -2,6 +2,8 @@
 
 [WhatAppClone] is a basic chat application made with [React-Native](https://github.com/facebook/react-native).
 
+NOTE:- BACKEND SUPPORT COMING SOON..(via AWS AMPLIFY)
+
 
 ## iOS App Preview
 
